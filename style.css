@@ -1,0 +1,681 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+  background: linear-gradient(45deg, #ffeef8, #fff0f5, #fdf2f8);
+}
+
+/* Custom Cursor */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 20px;
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* Background Video */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 240, 245, 0.3);
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Main Heading */
+.main-heading {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: #d63384;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+  -webkit-text-stroke: 2px black;
+  text-stroke: 2px black;
+}
+
+.subtitle {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: #87ceeb; /* Sky blue color */
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black;
+  max-width: 800px;
+  line-height: 1.3;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(214, 51, 132, 0.3);
+  }
+  to {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(214, 51, 132, 0.6);
+  }
+}
+
+/* Butterflies */
+.butterfly {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+}
+
+.butterfly-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.butterfly:hover .butterfly-img {
+  transform: scale(1.2);
+}
+
+/* Enhanced floating animation for free movement */
+.butterfly-1 {
+  top: 20%;
+  left: 10%;
+  animation: floatFree1 6s ease-in-out infinite;
+}
+
+.butterfly-2 {
+  top: 30%;
+  right: 15%;
+  animation: floatFree2 7s ease-in-out infinite;
+}
+
+.butterfly-3 {
+  top: 15%;
+  left: 50%;
+  animation: floatFree3 5s ease-in-out infinite;
+}
+
+.butterfly-4 {
+  top: 40%;
+  left: 20%;
+  animation: floatFree4 8s ease-in-out infinite;
+}
+
+.butterfly-5 {
+  top: 25%;
+  right: 30%;
+  animation: floatFree5 6.5s ease-in-out infinite;
+}
+
+.butterfly-6 {
+  top: 60%;
+  left: 15%;
+  animation: floatFree6 7.5s ease-in-out infinite;
+}
+
+.butterfly-7 {
+  top: 50%;
+  right: 10%;
+  animation: floatFree7 5.5s ease-in-out infinite;
+}
+
+.butterfly-8 {
+  top: 70%;
+  left: 40%;
+  animation: floatFree8 6.8s ease-in-out infinite;
+}
+
+.butterfly-9 {
+  top: 35%;
+  left: 60%;
+  animation: floatFree9 7.2s ease-in-out infinite;
+}
+
+.butterfly-10 {
+  top: 55%;
+  right: 25%;
+  animation: floatFree10 6.3s ease-in-out infinite;
+}
+
+.butterfly-11 {
+  top: 45%;
+  left: 80%;
+  animation: floatFree11 8.5s ease-in-out infinite;
+}
+
+/* Free floating animations for each butterfly */
+@keyframes floatFree1 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -20px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-20px, -40px) rotate(-3deg);
+  }
+  75% {
+    transform: translate(40px, -10px) rotate(7deg);
+  }
+}
+
+@keyframes floatFree2 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-40px, -30px) rotate(-5deg);
+  }
+  50% {
+    transform: translate(20px, -50px) rotate(4deg);
+  }
+  75% {
+    transform: translate(-30px, -20px) rotate(-6deg);
+  }
+}
+
+@keyframes floatFree3 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -25px) rotate(8deg);
+  }
+  50% {
+    transform: translate(-30px, -35px) rotate(-4deg);
+  }
+  75% {
+    transform: translate(25px, -45px) rotate(6deg);
+  }
+}
+
+@keyframes floatFree4 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-25px, -40px) rotate(-7deg);
+  }
+  50% {
+    transform: translate(45px, -20px) rotate(5deg);
+  }
+  75% {
+    transform: translate(-35px, -30px) rotate(-3deg);
+  }
+}
+
+@keyframes floatFree5 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(35px, -35px) rotate(6deg);
+  }
+  50% {
+    transform: translate(-40px, -25px) rotate(-8deg);
+  }
+  75% {
+    transform: translate(20px, -50px) rotate(4deg);
+  }
+}
+
+@keyframes floatFree6 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-30px, -20px) rotate(-4deg);
+  }
+  50% {
+    transform: translate(40px, -40px) rotate(7deg);
+  }
+  75% {
+    transform: translate(-20px, -35px) rotate(-5deg);
+  }
+}
+
+@keyframes floatFree7 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(25px, -45px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-35px, -15px) rotate(-6deg);
+  }
+  75% {
+    transform: translate(45px, -30px) rotate(8deg);
+  }
+}
+
+@keyframes floatFree8 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-45px, -35px) rotate(-8deg);
+  }
+  50% {
+    transform: translate(30px, -25px) rotate(4deg);
+  }
+  75% {
+    transform: translate(-25px, -45px) rotate(-6deg);
+  }
+}
+
+@keyframes floatFree9 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(40px, -30px) rotate(7deg);
+  }
+  50% {
+    transform: translate(-30px, -40px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(35px, -20px) rotate(6deg);
+  }
+}
+
+@keyframes floatFree10 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-35px, -25px) rotate(-6deg);
+  }
+  50% {
+    transform: translate(25px, -45px) rotate(4deg);
+  }
+  75% {
+    transform: translate(-40px, -35px) rotate(-7deg);
+  }
+}
+
+@keyframes floatFree11 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -40px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-45px, -20px) rotate(-8deg);
+  }
+  75% {
+    transform: translate(20px, -35px) rotate(6deg);
+  }
+}
+
+/* Heart formation positions */
+.heart-formation .butterfly-1 {
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-2 {
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-3 {
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-4 {
+  top: 45%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-5 {
+  top: 45%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-6 {
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-7 {
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-8 {
+  top: 55%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-9 {
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+.heart-formation .butterfly-11 {
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heart-formation .butterfly {
+  animation: none !important;
+  transition: all 2s ease-in-out;
+}
+
+/* Confetti animation */
+.confetti {
+  position: fixed;
+  font-size: 30px;
+  animation: confettiFall 3s linear forwards;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes confettiFall {
+  0% {
+    top: -50px;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+/* Special glow effect for 11th butterfly */
+.butterfly-11 .butterfly-img {
+  animation: specialGlow 2s ease-in-out infinite alternate;
+}
+
+/* Remove the old 10th butterfly glow */
+.butterfly-10 .butterfly-img {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes specialGlow {
+  0% {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  }
+  100% {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  }
+}
+
+/* Flowers */
+.flowers-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  z-index: 5;
+}
+
+.flower {
+  font-size: 50px;
+  animation: sway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.flower:nth-child(odd) {
+  animation-delay: 0s;
+}
+
+.flower:nth-child(even) {
+  animation-delay: 2s;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
+/* Floating Petals */
+.petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  font-size: 30px;
+  animation: fall 8s linear infinite;
+  opacity: 0.7;
+}
+
+.petal:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.petal:nth-child(2) {
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.petal:nth-child(3) {
+  left: 50%;
+  animation-delay: 4s;
+}
+
+.petal:nth-child(4) {
+  left: 70%;
+  animation-delay: 6s;
+}
+
+.petal:nth-child(5) {
+  left: 90%;
+  animation-delay: 1s;
+}
+
+@keyframes fall {
+  0% {
+    top: -50px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 100vh;
+    transform: rotate(360deg);
+  }
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: linear-gradient(135deg, #ffeef8, #fff0f5);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px; /* Increased from 500px */
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff69b4;
+  transform: scale(0.7);
+  transition: transform 0.3s ease;
+  max-height: 80vh; /* Add max height */
+  overflow-y: auto; /* Add scroll if needed */
+}
+
+.popup-overlay.active .popup-content {
+  transform: scale(1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #d63384;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #e91e63;
+}
+
+#popup-message {
+  font-family: "Dancing Script", cursive;
+  font-size: 20px; /* Slightly smaller for longer text */
+  color: #d63384;
+  line-height: 1.4;
+  margin: 10px 0;
+  text-align: left; /* Left align for better readability of long text */
+}
+
+/* Music Toggle */
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 105, 180, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.music-toggle:hover {
+  background: rgba(255, 105, 180, 1);
+  transform: scale(1.1);
+}
+
+.music-toggle.playing {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .butterfly {
+    font-size: 30px;
+  }
+
+  .flower {
+    font-size: 35px;
+  }
+
+  .flowers-container {
+    height: 100px;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
+
+  #popup-message {
+    font-size: 20px;
+  }
+}
